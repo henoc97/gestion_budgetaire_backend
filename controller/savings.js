@@ -25,10 +25,10 @@ module.exports.create_saving = (req, res) => {
                         return res.status(403).json({message: 'Token not valid'})
                     } else {
                         console.log(_tokendata.userId, _tokendata.userEmail);
-                        const {goal, targetamount, currency, allsaving, reachgoaldate} = req.body;
+                        const {goal, targetamount, allsaving, reachgoaldate} = req.body;
                         // Exemple d'exécution d'une requête SQL
-                        const query = "SELECT * FROM insert_savings($1, $2, $3, $4, $5, $6)";
-                        const values = [_tokendata.userId, goal, targetamount, currency, allsaving, reachgoaldate];
+                        const query = "SELECT * FROM insert_savings($1, $2, $3, $4, $5)";
+                        const values = [_tokendata.userId, goal, targetamount, allsaving, reachgoaldate];
                         return client.query(query, values, (err, result) => {
                             release();
                             if (err) {

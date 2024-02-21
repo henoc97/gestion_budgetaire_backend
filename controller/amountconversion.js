@@ -20,9 +20,11 @@ module.exports.convertamount = (req, res) => {
                 } else {
                     console.log(_tokendata.userId, _tokendata.userEmail);
                     const {amounttoconvert, currencytoconvert, currencyconvert} = req.body;
-                    return res.status(200).json({"message" : 
-                     CurrenciesConversionSingle(amounttoconvert, 
-                        currencytoconvert, currencyconvert)})
+                    console.log(amounttoconvert, currencytoconvert, currencyconvert);
+                    const myres = await CurrenciesConversionSingle(amounttoconvert, 
+                        currencytoconvert, currencyconvert)
+                        console.log(myres);
+                    return res.status(200).json({"amount" : myres})
                 }
             }
         )

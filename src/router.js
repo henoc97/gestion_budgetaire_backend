@@ -10,7 +10,7 @@ const {create_transac, budgettransacs, deletetransac} = require('../controller/s
 
 const {create_account, updatesold} = require('../controller/account')
 
-const convertamount = require('../controller/amountconversion');
+const {convertamount} = require('../controller/amountconversion');
 
 router.post("/createUser", createUser);
 
@@ -43,7 +43,7 @@ router.post("/create_transac", create_transac)
 
 router.post("/budgettransacs", budgettransacs)
 
-router.post("/amountconversion", convertamount)
+router.post("/convertamount", convertamount)
 
 router.route("/deletetransac").post(deletetransac)
 

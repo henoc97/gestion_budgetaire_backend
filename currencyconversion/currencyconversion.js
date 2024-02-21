@@ -5,7 +5,7 @@ async function CurrenciesConversionSingle (amount, fromCurrency, toCurrency){
         const myExchangeRate = await _exchangeRate(fromCurrency, toCurrency);
         if (_exchangeRate !=NaN) {
             const convertedAmount = amount * myExchangeRate;
-            return convertedAmount, myExchangeRate;
+            return convertedAmount;
             //console.log("convertedAmount : ", convertedAmount);
         }
         
