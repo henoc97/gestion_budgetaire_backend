@@ -52,7 +52,7 @@ class UserModel {
     static jsonToNewUser (myUser) {
         const myFreshUser =  new UserModel (
             myUser.id, 
-            myUser.fstname, 
+            myUser.firstname, 
             myUser.lastname,
             myUser.mailaddress,
             myUser.favoritecurrency,

@@ -4,11 +4,11 @@ const {createUser, userauth} = require('../controller/users')
 
 const {createBudgets, userBudgets, deletebudget} = require("../controller/budget")
 
-const {create_saving, userGoals, addsaving, deletesaving} = require('../controller/savings')
+const {create_saving, userGoals, update_allsavings, user_savingdbank, deletesaving} = require('../controller/savings')
 
 const {create_transac, budgettransacs, deletetransac} = require('../controller/spends')
 
-const {create_account, updatesold} = require('../controller/account')
+const {user_account, transfer_to_sold, account_savingsbank, user_transfers } = require('../controller/account')
 
 const {convertamount} = require('../controller/amountconversion');
 
@@ -33,7 +33,9 @@ router.route("/deletebudget").post(deletebudget)
 
 router.post("/create_saving", create_saving)
 
-router.route("/addsaving").post(addsaving)
+router.route("/update_allsavings").post(update_allsavings)
+
+router.route("/user_savingdbank").get(user_savingdbank)
 
 router.route("/deletesaving").post(deletesaving)
 
@@ -47,7 +49,13 @@ router.post("/convertamount", convertamount)
 
 router.route("/deletetransac").post(deletetransac)
 
-router.route("/create_account").post(create_account)
+router.route("/user_account").get(user_account)
+
+router.route("/transfer_to_sold").post(transfer_to_sold)
+
+router.route("/account_savingsbank").post(account_savingsbank)
+
+router.route("/user_transfers").get(user_transfers)
 
 router.route("/updatesold").post(updatesold)
 

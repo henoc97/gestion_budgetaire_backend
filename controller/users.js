@@ -68,6 +68,7 @@ module.exports.userauth = (req, res) => {
                         if(await comparePasswords(pwd, pwdhashed)){
                             console.log("ok");
                             const user = UserModel.jsonToNewUser(result.rows[0])
+                            console.log("user:", user);
                             const newToke = generateToken({id : user.id, email : user.mailAddress})
                             console.log("mailAddress",  user.mailAddress);
                             console.log(newToke);
