@@ -14,11 +14,6 @@ const {convertamount} = require('../controller/amountconversion');
 
 router.post("/createUser", createUser);
 
-// router.post("/createUser", (req, res)=>{
-//     console.log(req.body);
-//     res.send("ca marche")
-// })
-//router.route("/").get((res)=>{json({messge : "yes"})})
 router.post("/userauth", userauth)
 
 router.route("/benie").get((req, res)=>{

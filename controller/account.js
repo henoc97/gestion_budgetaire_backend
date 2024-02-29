@@ -66,9 +66,9 @@ module.exports.transfer_to_sold = (req, res) => {
                     } else {
                         console.log(_tokendata.userId, _tokendata.userEmail);
                         // Exemple d'exécution d'une requête SQL
-                            const {amount, description} = req.body;
+                            const {amount, descriptions} = req.body;
                             const query = "SELECT * FROM insert_transfer($1, $2, $3)";
-                            const values = [_tokendata.userId, amount, description];
+                            const values = [_tokendata.userId, amount, descriptions];
                             return client.query(query, values, (err, result) => {
                                 release();
                                 if (err) {
