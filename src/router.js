@@ -16,23 +16,15 @@ router.post("/createUser", createUser);
 
 router.post("/userauth", userauth)
 
-router.route("/benie").get((req, res)=>{
-    res.send("ca marche !")
-})
-
 router.post("/createBudgets", createBudgets)
 
 router.get("/userBudgets", userBudgets)
-
-router.route("/deletebudget").post(deletebudget)
 
 router.post("/create_saving", create_saving)
 
 router.route("/update_allsavings").post(update_allsavings)
 
 router.route("/user_savingdbank").get(user_savingdbank)
-
-router.route("/deletesaving").post(deletesaving)
 
 router.get("/userGoals", userGoals)
 
@@ -42,8 +34,6 @@ router.post("/budgettransacs", budgettransacs)
 
 router.post("/convertamount", convertamount)
 
-router.route("/deletetransac").post(deletetransac)
-
 router.route("/user_account").get(user_account)
 
 router.route("/transfer_to_sold").post(transfer_to_sold)
@@ -52,7 +42,6 @@ router.route("/account_savingsbank").post(account_savingsbank)
 
 router.route("/user_transfers").get(user_transfers)
 
-router.route("/updatesold").post(updatesold)
 
 
 module.exports = router;
