@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+
 const {createUser, userauth} = require('../controller/users')
 
 const {createBudgets, userBudgets, deletebudget} = require("../controller/budget")
@@ -11,6 +12,8 @@ const {create_transac, budgettransacs, deletetransac} = require('../controller/s
 const {user_account, transfer_to_sold, account_savingsbank, user_transfers } = require('../controller/account')
 
 const {convertamount} = require('../controller/amountconversion');
+
+const {upload_file} = require('../controller/upload_file');
 
 router.post("/createUser", createUser);
 
@@ -41,6 +44,8 @@ router.route("/transfer_to_sold").post(transfer_to_sold)
 router.route("/account_savingsbank").post(account_savingsbank)
 
 router.route("/user_transfers").get(user_transfers)
+
+router.post('/upload_file', upload_file)
 
 
 

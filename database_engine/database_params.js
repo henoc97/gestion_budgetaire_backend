@@ -9,10 +9,10 @@ const dbport = process.env.DB_PORT
 
 const pool = new Pool({
   user: "postgres",
-  host: "localhost",
-  database: 'gestion_budgetaire',
+  host: "127.0.0.1",
+  database: "gestion_budgetaire",
   password: "henoc2004",
-  port: 5432,
+  port: "5432",
 });
 
 module.exports = pool

@@ -1,6 +1,7 @@
 const pool = require("../database_engine/database_params")
+const jwt = require('jsonwebtoken');
 
-
+const key = '700bfbaff3587aa6b49560474a316b14dd1a0b2b67cd320fc0c079318457ecf1b8650c19e9f835c25c3f36addc40488a119ed6d2624fe8be792541da688a7140';    
 
 module.exports.user_account = (req, res) => {
     pool.connect((err, client, release) => {
@@ -31,7 +32,7 @@ module.exports.user_account = (req, res) => {
                                     return console.error('Erreur lors de l\'exécution de la requête', err);
                                 }
                                 console.log(result.rows);
-                                res.status(200).json({ message: 0 });
+                                res.status(200).json(result.rows[0]);
                             });
                     }
                 }
