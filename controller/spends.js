@@ -129,7 +129,7 @@ module.exports.deletetransac = (req, res) => {
             )
         } catch (error) {
             console.log('Erreur lors de l\'exécution', error);
-        }
+        } 
         
     })
     
